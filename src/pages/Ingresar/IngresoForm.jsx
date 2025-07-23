@@ -33,6 +33,8 @@ export default function IngresoForm({ onBack }) {
     setF((prev) => ({ ...prev, [name]: value }));
   };
 
+      console.log("Ingreso / Datos plano form:", f);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { ...f };
@@ -44,7 +46,8 @@ export default function IngresoForm({ onBack }) {
     const [year, month, day] = data.fecha.split("-").map(Number);
     const dtLocal = new Date(year, month - 1, day);
     data.fecha = Timestamp.fromDate(dtLocal);
-
+    console.log("Ingreso / Datos:", data);
+    console.log("Ingreso / Fecha normalizada:", data.fecha);
     const res = await guardarIngreso(data);
     if (res.success) {
       alert(t("ingreso_guardado_correctamente"));

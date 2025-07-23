@@ -48,6 +48,7 @@ const normalizeFecha = (fecha) => {
 export const guardarIngreso = async (data) => {
   try {
     const payload = { ...data, fecha: normalizeFecha(data.fecha) };
+    console.log("Firebase service / Payload:", payload);
     await addDoc(collection(db, "ingresos"), payload);
     return { success: true };
   } catch (error) {
