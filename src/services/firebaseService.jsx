@@ -18,16 +18,6 @@ const app  = initializeApp(firebaseConfig);
 const db   = getFirestore(app);
 const auth = getAuth(app);
 
-/**
- * Normaliza `fecha` a Firestore Timestamp.
- */
-/*const normalizeFecha = (fecha) => {
-  if (!fecha) return fecha;
-  if (fecha instanceof Timestamp) return fecha;
-  if (fecha instanceof Date) return Timestamp.fromDate(fecha);
-  const dt = new Date(fecha);
-  return !isNaN(dt) ? Timestamp.fromDate(dt) : fecha;
-};*/
 
 const normalizeFecha = (fecha) => {
   if (!fecha) return fecha;
