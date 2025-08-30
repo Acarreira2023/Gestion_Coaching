@@ -25,7 +25,6 @@ export default function IngresoForm({ onBack }) {
     cantidad: 1,
     numeroDoc: "",
     descripcion: "",
-    cliente: "",
     total: 0
   });
 
@@ -33,8 +32,6 @@ export default function IngresoForm({ onBack }) {
     const { name, value } = e.target;
     setF((prev) => ({ ...prev, [name]: value }));
   };
-
-      console.log("Ingreso / Datos plano form:", f);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,8 +44,7 @@ export default function IngresoForm({ onBack }) {
     const [year, month, day] = data.fecha.split("-").map(Number);
     const dtLocal = new Date(year, month - 1, day);
     data.fecha = Timestamp.fromDate(dtLocal);
-    console.log("Ingreso / Datos:", data);
-    console.log("Ingreso / Fecha normalizada:", data.fecha);
+
     const res = await guardarIngreso(data);
     if (res.success) {
       alert(t("ingreso_guardado_correctamente"));
@@ -179,18 +175,6 @@ export default function IngresoForm({ onBack }) {
           value={f.cantidad}
           onChange={handleChange}
           required
-        />
-      </div>
-
-      {/* Cliente */}
-      <div className={styles.field}>
-        <label htmlFor="cliente">{t("cliente")}</label>
-        <input
-          type="text"
-          id="cliente"
-          name="cliente"
-          value={f.cliente}
-          onChange={handleChange}
         />
       </div>
 

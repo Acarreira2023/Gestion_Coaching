@@ -55,7 +55,7 @@ export const mediosEgreso = [
   "OTROS"
 ];
 export const categoriasEgreso = [
-  "SERVICIOS",
+  "SERVICIO",
   "SUELDOS",
   "PRODUCTOS DE LIMPIEZA",
   "PRODUCTOS DE MASAJE",

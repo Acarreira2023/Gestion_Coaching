@@ -36,11 +36,11 @@ export function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
       if (fbUser) {
         // Obtener rol del doc /users/{uid}, por defecto "user"
-        
+        const role = await fetchUserRole(fbUser.uid);
         setUser({
           uid:   fbUser.uid,
           email: fbUser.email,
-          
+          role
         });
       } else {
         setUser(null);

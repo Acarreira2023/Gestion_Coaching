@@ -1,3 +1,22 @@
+/*src/components/Charts/Charts.module.css*/
+/*
+.chartWrapper {
+  background: var(--bg-alt);
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  flex: 1 1 320px;
+}
+
+.chartTitle {
+  margin: 0 0 0.3rem;
+  text-align: center;
+  color: var(--fg);
+  font-size: 1rem;
+}
+*/
+
 /* src/components/charts/Charts.module.css */
 
 /* Wrapper genérico para todos los gráficos */
@@ -28,7 +47,7 @@
 /* Pie chart específico */
 .pieChart {
   flex: 1 1 280px;
-  max-width: 65%;
+  max-width: 60%;
   background: var(--bg-alt);
   border: 1px solid var(--fg);
   border-radius: var(--radius);

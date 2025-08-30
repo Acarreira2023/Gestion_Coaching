@@ -18,18 +18,14 @@ const app  = initializeApp(firebaseConfig);
 const db   = getFirestore(app);
 const auth = getAuth(app);
 
-
+/**
+ * Normaliza `fecha` a Firestore Timestamp.
+ */
 const normalizeFecha = (fecha) => {
   if (!fecha) return fecha;
   if (fecha instanceof Timestamp) return fecha;
-  let dt;
-  if (fecha instanceof Date) {
-    dt = new Date(fecha);
-  } else {
-    dt = new Date(fecha);
-  }
-  // Fuerza la hora a medianoche local
-  dt.setHours(0, 0, 0, 0);
+  if (fecha instanceof Date) return Timestamp.fromDate(fecha);
+  const dt = new Date(fecha);
   return !isNaN(dt) ? Timestamp.fromDate(dt) : fecha;
 };
 
@@ -38,7 +34,6 @@ const normalizeFecha = (fecha) => {
 export const guardarIngreso = async (data) => {
   try {
     const payload = { ...data, fecha: normalizeFecha(data.fecha) };
-    console.log("Firebase service / Payload:", payload);
     await addDoc(collection(db, "ingresos"), payload);
     return { success: true };
   } catch (error) {
