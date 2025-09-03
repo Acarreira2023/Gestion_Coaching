@@ -35,6 +35,15 @@ export default function Graficos1() {
     egresosByCategoria,
     loading
   } = useReportData(params);
+  
+  console.log({
+    byDate,
+    ingresosByTipo,
+    egresosByTipo,
+    ingresosByCategoria,
+    egresosByCategoria
+    });
+
 
   // totales/métricas
   const totalI   = byDate.length ? byDate.at(-1).ingresos : 0;
@@ -62,6 +71,7 @@ export default function Graficos1() {
     { label: t("margen_utilidad"),  value: margen,   fmt: fmtPct,  color: margen >= 0   ? "green" : "red" }
   ], [totalI, totalE, utilidad, indice, margen, t]);
 
+  console.log(cards);
   // pies
   const [groupBy, setGroupBy] = useState("categoria");
 

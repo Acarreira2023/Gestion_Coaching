@@ -16,6 +16,10 @@ export function useReportData(params = {}) {
   const { egresos,  loading: loadingE } = useEgresosRealtime();
   const loading = loadingI || loadingE;
 
+ console.log('Ingresos:', ingresos);
+ console.log('Egresos:', egresos);
+
+
   return useMemo(() => {
     // Determinar modo y rango
     const hoy = new Date();
@@ -101,6 +105,14 @@ export function useReportData(params = {}) {
     const ingresosByCategoria = mkPie(filtI, categoriasIngreso, "categoria");
     const egresosByTipo       = mkPie(filtE, tiposEgreso,       "tipo");
     const egresosByCategoria  = mkPie(filtE, categoriasEgreso,  "categoria");
+
+    console.log({
+    byDate,
+    ingresosByTipo,
+    egresosByTipo,
+    ingresosByCategoria,
+    egresosByCategoria
+    });
 
     return {
       loading,
