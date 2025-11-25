@@ -14,7 +14,7 @@ import {
   doc
 } from "firebase/firestore";
 import { FaTrash, FaEdit, FaSave, FaTimes } from "react-icons/fa";
-import styles from "./Ingreso.module.css";
+import styles from "../Ingreso/Ingreso.module.css";
 
 export default function Ingreso() {
   const { t } = useIdioma();
@@ -38,7 +38,7 @@ export default function Ingreso() {
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData]   = useState({
     categoria: "",
-    tipo: "",
+    item: "",
     total: ""
   });
 
@@ -110,7 +110,7 @@ export default function Ingreso() {
             id:        d.id,
             fecha:     date.toLocaleDateString(),
             categoria: data.categoria ?? "",
-            tipo:      data.tipo ?? "",
+            item:      data.item ?? "",
             total:     data.total ?? 0
           };
         });
@@ -169,19 +169,19 @@ export default function Ingreso() {
     setEditingId(row.id);
     setEditData({
       categoria: row.categoria,
-      tipo:      row.tipo,
+      item:      row.item,
       total:     row.total.toString()
     });
   };
   const cancelEdit = () => {
     setEditingId(null);
-    setEditData({ categoria: "", tipo: "", total: "" });
+    setEditData({ categoria: "", item: "", total: "" });
   };
   const saveEdit = async id => {
     const ref = doc(db, "ingresos", id);
     await updateDoc(ref, {
       categoria: editData.categoria,
-      tipo:      editData.tipo,
+      item:      editData.item,
       total:     Number(editData.total)
     });
     setIngresos(prev =>
@@ -305,7 +305,7 @@ export default function Ingreso() {
             </th>
             <th>{t("fecha")}</th>
             <th>{t("categoria")}</th>
-            <th>{t("tipo")}</th>
+            <th>{t("item")}</th>
             <th>{t("total")}</th>
             <th>{t("acciones")}</th>
           </tr>
@@ -338,13 +338,13 @@ export default function Ingreso() {
                 {editingId === row.id ? (
                   <input
                     className={styles.editInput}
-                    value={editData.tipo}
+                    value={editData.item}
                     onChange={e =>
-                      setEditData(prev => ({ ...prev, tipo: e.target.value }))
+                      setEditData(prev => ({ ...prev, item: e.target.value }))
                     }
                   />
                 ) : (
-                  row.tipo
+                  row.item
                 )}
               </td>
               <td>

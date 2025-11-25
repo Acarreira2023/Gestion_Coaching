@@ -12,6 +12,8 @@ export default function TablaIngresos() {
   const navigate = useNavigate();
   const { ingresos, loading, removeIngreso } = useIngresosData();
 
+  console.log("Datos para la tabla de ingresos:", ingresos);
+
   if (loading) {
     return <p>{t("cargando_ingresos")}…</p>;
   }

@@ -29,8 +29,8 @@ export default function Graficos1() {
 
   const {
     byDate,
-    ingresosByTipo,
-    egresosByTipo,
+    ingresosByItem,
+    egresosByItem,
     ingresosByCategoria,
     egresosByCategoria,
     loading
@@ -38,8 +38,8 @@ export default function Graficos1() {
   
   console.log({
     byDate,
-    ingresosByTipo,
-    egresosByTipo,
+    ingresosByItem,
+    egresosByItem,
     ingresosByCategoria,
     egresosByCategoria
     });
@@ -115,8 +115,8 @@ export default function Graficos1() {
     return <p className={styles.loading}>{t("cargando")}…</p>;
   }
 
-  const ingresosPie = groupBy === "categoria" ? ingresosByCategoria : ingresosByTipo;
-  const egresosPie  = groupBy === "categoria" ? egresosByCategoria  : egresosByTipo;
+  const ingresosPie = groupBy === "categoria" ? ingresosByCategoria : ingresosByItem;
+  const egresosPie  = groupBy === "categoria" ? egresosByCategoria  : egresosByItem;
 
   return (
     <div className={styles.container}>
@@ -225,11 +225,11 @@ export default function Graficos1() {
       {/* TOGGLE TORTAS */}
       <div className={styles.toggleContainer}>
         <button
-          onClick={() => setGroupBy(g => g === "categoria" ? "tipo" : "categoria")}
+          onClick={() => setGroupBy(g => g === "categoria" ? "item" : "categoria")}
           className={styles.toggleButton}
         >
           {groupBy === "categoria"
-            ? t("agrupado_por_tipo")
+            ? t("agrupado_por_item")
             : t("agrupado_por_categoria")}
         </button>
       </div>
@@ -239,7 +239,7 @@ export default function Graficos1() {
         <div className={`${styles.pieBlock} ${styles.pieIngresos}`}>
           <h5>
             {t("ingresos_por")}&nbsp;
-            {groupBy === "categoria" ? t("categoria") : t("tipo")}
+            {groupBy === "categoria" ? t("categoria") : t("item")}
           </h5>
           <div className={styles.pieWrapper}>
             <PieChartComponent data={ingresosPie} />
@@ -248,7 +248,7 @@ export default function Graficos1() {
         <div className={`${styles.pieBlock} ${styles.pieEgresos}`}>
           <h5>
             {t("egresos_por")}&nbsp;
-            {groupBy === "categoria" ? t("categoria") : t("tipo")}
+            {groupBy === "categoria" ? t("categoria") : t("item")}
           </h5>
           <div className={styles.pieWrapper}>
             <PieChartComponent data={egresosPie} />

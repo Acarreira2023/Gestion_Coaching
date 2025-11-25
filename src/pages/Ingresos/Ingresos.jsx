@@ -13,8 +13,8 @@ export default function Ingresos() {
   // Obtenemos todos los datos necesarios
   const {
     byDate,
-    ingresosByTipo,
-    egresosByTipo,
+    ingresosByItem,
+    egresosByItem,
     ingresosByCategoria,
     egresosByCategoria,
     loading
@@ -25,17 +25,17 @@ export default function Ingresos() {
   // Preparamos el resumen “Actual”
   const resumen = byDate[0] || { ingresos: 0, egresos: 0, utilidad: 0 };
 
-  // Derivamos utilidades por tipo
-  const utilidadByTipo = React.useMemo(() => {
+  // Derivamos utilidades por item
+  const utilidadByItem = React.useMemo(() => {
     const map = {};
-    ingresosByTipo.forEach(({ name, value }) => {
+    ingresosByItem.forEach(({ name, value }) => {
       map[name] = (map[name] || 0) + value;
     });
-    egresosByTipo.forEach(({ name, value }) => {
+    egresosByItem.forEach(({ name, value }) => {
       map[name] = (map[name] || 0) - value;
     });
     return Object.entries(map).map(([name, value]) => ({ name, value }));
-  }, [ingresosByTipo, egresosByTipo]);
+  }, [ingresosByItem, egresosByItem]);
 
   // Derivamos utilidades por categoría
   const utilidadByCategoria = React.useMemo(() => {
@@ -69,8 +69,8 @@ export default function Ingresos() {
           {/* Tortas: Utilidad por tipo y por categoría */}
           <div className={styles.pieContainer}>
             <PieChartComponent
-              title={t("utilidad_por_tipo")}
-              data={utilidadByTipo}
+              title={t("utilidad_por_item")}
+              data={utilidadByItem}
             />
             <PieChartComponent
               title={t("utilidad_por_categoria")}

@@ -291,7 +291,7 @@ export default function Datos() {
                   </th>
                   <th>{t("fecha")}</th>
                   <th>{t("categoria")}</th>
-                  <th>{t("tipo")}</th>
+                  <th>{t("item")}</th>
                   <th>{t("proveedor")}</th>
                   <th>{t("Total")}</th>
                   <th>{t("acciones")}</th>
@@ -309,7 +309,7 @@ export default function Datos() {
                     </td>
                     <td>{row.fecha}</td>
                     <td>{row.categoria}</td>
-                    <td>{row.tipo}</td>
+                    <td>{row.item}</td>
                     <td>{row.proveedor}</td>
                     <td>${row.total}</td>
                     <td>
@@ -360,7 +360,7 @@ export default function Datos() {
                   </th>
                   <th>{t("fecha")}</th>
                   <th>{t("categoria")}</th>
-                  <th>{t("tipo")}</th>
+                  <th>{t("item")}</th>
                   <th>{t("proveedor")}</th>
                   <th>{t("Total")}</th>
                   <th>{t("acciones")}</th>
@@ -378,7 +378,7 @@ export default function Datos() {
                     </td>
                     <td>{row.fecha}</td>
                     <td>{row.categoria}</td>
-                    <td>{row.tipo}</td>
+                    <td>{row.item}</td>
                     <td>{row.proveedor}</td>
                     <td>${row.total}</td>
                     <td>

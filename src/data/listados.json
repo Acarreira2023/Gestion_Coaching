@@ -1,62 +1,112 @@
 
 {
-  "tiposIngreso": [
-    { "value": "INMUEBLE",        "labelKey": "inmueble" },
-    { "value": "VEHICULO",        "labelKey": "vehiculo" },
-    { "value": "SUCURSALES",      "labelKey": "sucursales" },
-    { "value": "INVERSIONES",     "labelKey": "inversiones" },
-    { "value": "NORMA_MASAJES",   "labelKey": "norma_masajes" },
-    { "value": "OTROS",           "labelKey": "otros" }
-  ],
-  "inmuebles": [
-    { "value": "DPTO_CIUDAD_DE_LA_PAZ", "labelKey": "ciudad_de_la_paz" },
-    { "value": "DPTO_CORRIENTES",        "labelKey": "corrientes" },
-    { "value": "DPTO_CONESA_I",          "labelKey": "conesa_i" },
-    { "value": "DPTO_CONESA_II",         "labelKey": "conesa_ii" }
-  ],
-  "sucursales": [
-    { "value": "PRANA",                "labelKey": "prana" },
-    { "value": "EQUILIBRIO",           "labelKey": "equilibrio" },
-    { "value": "FOUR_SEASONS",         "labelKey": "four_seasons" },
-    { "value": "MASAJES_EN_DOMICILIO", "labelKey": "masajes_en_domicilio" },
-    { "value": "MASAJES_A_DOMICILIO",  "labelKey": "masajes_a_domicilio" }
-  ],
   "mediosIngreso": [
-    { "value": "EFECTIVO",          "labelKey": "efectivo" },
-    { "value": "CHEQUE",            "labelKey": "cheque" },
-    { "value": "TARJETA_CREDITO",   "labelKey": "tarjeta_credito" },
-    { "value": "TARJETA_DEBITO",    "labelKey": "tarjeta_debito" },
-    { "value": "BILLETERA_VIRTUAL", "labelKey": "billetera_virtual" },
-    { "value": "TRANSFERENCIA",     "labelKey": "transferencia" },
-    { "value": "ACREDITACION",      "labelKey": "acreditacion" },
-    { "value": "OTROS",             "labelKey": "otros" }
-  ],
-  "categoriasIngreso": [
-    { "value": "SERVICIO",    "labelKey": "servicio" },
-    { "value": "ALQUILER",    "labelKey": "alquiler" },
-    { "value": "INVERSIONES", "labelKey": "inversiones" },
-    { "value": "OTROS",       "labelKey": "otros" }
-  ],
-  "tiposEgreso": [
-    { "value": "INMUEBLE",   "labelKey": "inmueble" },
-    { "value": "VEHICULO",   "labelKey": "vehiculo" },
-    { "value": "SUCURSALES", "labelKey": "sucursales" },
-    { "value": "JUBILACION", "labelKey": "jubilacion" },
-    { "value": "OTROS",      "labelKey": "otros" }
+    { "value": "EFECTIVO", "labelKey": "efectivo" },
+    { "value": "TRANSFERENCIA", "labelKey": "transferencia" },
+    { "value": "OPENPAY", "labelKey": "openpay" },
+    { "value": "MERCADO_LIBRE", "labelKey": "mercado_libre" }
   ],
   "mediosEgreso": [
-    { "value": "EFECTIVO",        "labelKey": "efectivo" },
-    { "value": "CHEQUE",          "labelKey": "cheque" },
-    { "value": "TARJETA_CREDITO", "labelKey": "tarjeta_credito" },
-    { "value": "TARJETA_DEBITO",  "labelKey": "tarjeta_debito" },
-    { "value": "TRANSFERENCIA",   "labelKey": "transferencia" },
-    { "value": "OTROS",           "labelKey": "otros" }
+    { "value": "EFECTIVO", "labelKey": "efectivo" },
+    { "value": "TRANSFERENCIA", "labelKey": "transferencia" },
+    { "value": "OPENPAY", "labelKey": "openpay" },
+    { "value": "MERCADO_LIBRE", "labelKey": "mercado_libre" }
+  ],
+  "categoriasIngreso": [
+    { "value": "SESION", "labelKey": "sesion" },
+    { "value": "TALLER", "labelKey": "taller" },
+    { "value": "RETO_WHATSAPP", "labelKey": "reto_whatsapp" },
+    { "value": "EBOOKS", "labelKey": "ebooks" },
+    { "value": "AUDIOS", "labelKey": "audios" }
+  ],
+  "itemsIngreso": {
+    "SESION": [
+      { "value": "SESION_SIMPLE", "labelKey": "sesion" }
+    ],
+    "TALLER": [
+      { "value": "NO_NACIDOS", "labelKey": "no_nacidos" },
+      { "value": "RITO_UTERO", "labelKey": "rito_del_utero" },
+      { "value": "EL_ARTE_DE_AMARTE", "labelKey": "el_arte_de_amarte" }
+    ],
+    "RETO_WHATSAPP": [
+      { "value": "21_DIAS_AMOR_PROPIO", "labelKey": "21diasparatuamorpropio" }
+    ],
+    "EBOOKS": [
+      { "value": "MANTRAS_PARA_TU_FERTILIDAD", "labelKey": "mantras_para_tu_fertilidad" },
+      { "value": "99_PREGUNTAS_AMOR_PROPIO", "labelKey": "99_preguntas_para_tu_amor_propio" }
+    ],
+    "AUDIOS": [
+      { "value": "MEDITACIONES", "labelKey": "meditaciones" }
+    ]
+  },
+  "modalidad": [
+    { "value": "PRESENCIAL", "labelKey": "presencial" },
+    { "value": "ONLINE", "labelKey": "online" },
+    { "value": "GRABADO", "labelKey": "grabado" }
   ],
   "categoriasEgreso": [
-    { "value": "SUELDOS",        "labelKey": "sueldos" },
-    { "value": "PRODUCTOS",      "labelKey": "productos" },
-    { "value": "MANTENIMIENTO",  "labelKey": "mantenimiento" },
-    { "value": "PUBLICIDAD",     "labelKey": "publicidad" },
-    { "value": "OTROS",          "labelKey": "otros" }
-  ]
+    { "value": "COMISIONES", "labelKey": "comisiones" },
+    { "value": "PUBLICIDAD", "labelKey": "publicidad" },
+    { "value": "ALQUILER", "labelKey": "alquiler" },
+    { "value": "REFRIGERIO", "labelKey": "refrigerio" },
+    { "value": "IMPRESION", "labelKey": "impresion" },
+    { "value": "ELEMENTOS_DE_TRABAJO", "labelKey": "elementos_de_trabajo" },
+    { "value": "LIBRERIA", "labelKey": "libreria" },
+    { "value": "ENVIOS", "labelKey": "envios" },
+    { "value": "CAPACITACIONES", "labelKey": "capacitaciones" },
+    { "value": "TERAPIA_PERSONAL", "labelKey": "terapia_personal" },
+    { "value": "MOVILIDAD", "labelKey": "movilidad" }
+  ],
+  "itemsEgreso": {
+    "COMISIONES": [
+      { "value": "MERCADO_LIBRE", "labelKey": "mercado_libre" },
+      { "value": "PAYPAL", "labelKey": "paypal" },
+      { "value": "OPENPAY", "labelKey": "openpay" },
+      { "value": "BANCARIAS", "labelKey": "bancarias" }
+    ],
+    "PUBLICIDAD": [
+      { "value": "INSTAGRAM", "labelKey": "instagram" },
+      { "value": "META", "labelKey": "meta" }
+    ],
+    "ALQUILER": [
+      { "value": "SALA", "labelKey": "sala" },
+      { "value": "CONSULTORIO", "labelKey": "consultorio" }
+    ],
+    "REFRIGERIO": [
+      { "value": "BEBIDAS", "labelKey": "bebidas" },
+      { "value": "COMIDA", "labelKey": "comida" },
+      { "value": "DESCARTABLES", "labelKey": "descartables" }
+    ],
+    "IMPRESION": [
+      { "value": "TARJETAS", "labelKey": "tarjetas" },
+      { "value": "FOLLETOS", "labelKey": "folletos" },
+      { "value": "SOUVENIR", "labelKey": "souvenir" },
+      { "value": "DECORACION", "labelKey": "decoracion" },
+      { "value": "VELAS", "labelKey": "velas" },
+      { "value": "TRIPODE", "labelKey": "tripode" },
+      { "value": "AURICULARES", "labelKey": "auriculares" },
+      { "value": "MANTAS", "labelKey": "mantas" },
+      { "value": "PIEDRAS", "labelKey": "piedras" },
+      { "value": "ORACULO", "labelKey": "oraculo" },
+      { "value": "COLCHONETAS", "labelKey": "colchonetas" },
+      { "value": "ALMOHADONES", "labelKey": "almohadones" }
+    ],
+    "ELEMENTOS_DE_TRABAJO": [
+      { "value": "MANTELES", "labelKey": "manteles" },
+      { "value": "UTILES", "labelKey": "utiles" }
+    ],
+    "LIBRERIA": [
+      { "value": "LIBROS", "labelKey": "libros" }
+    ],
+    "ENVIOS": [
+      { "value": "CORREO", "labelKey": "correo" },
+      { "value": "ONLINE", "labelKey": "online" }
+    ],
+    "CAPACITACIONES": [
+      { "value": "PRESENCIAL", "labelKey": "presencial" }
+    ],
+    "TERAPIA_PERSONAL": [
+      { "value": "TALLERES", "labelKey": "talleres" }
+    ]
+  }
 }

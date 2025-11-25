@@ -16,7 +16,7 @@ import {
 } from "firebase/firestore";
 import { endOfMonth } from "date-fns";
 import { FaTrash, FaEdit, FaSave, FaTimes } from "react-icons/fa";
-import styles from "../Ingreso/Ingreso.module.css";
+import styles from "../Egreso/Egreso.module.css";
 
 export default function Egreso() {
   const { t } = useIdioma();
@@ -40,7 +40,7 @@ export default function Egreso() {
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData]   = useState({
     categoria: "",
-    tipo: "",
+    item: "",
     proveedor: "",
     total: ""
   });
@@ -138,37 +138,7 @@ export default function Egreso() {
 
     return q;
   };
-
-  // carga datos al cambiar filtros
-  /*useEffect(() => {
-    async function load() {
-      setLoading(true);
-      setError(null);
-      try {
-        const snap = await getDocs(buildQuery());
-        const list = snap.docs.map(d => {
-          const data = d.data();
-          const day  = normalizeDate(data.fecha);
-          return {
-            id:        data.id || d.id,
-            fecha:     day.toLocaleDateString(),
-            categoria: data.categoria || "",
-            tipo:      data.tipo      || "",
-            proveedor: data.proveedor || "",
-            total:     data.total     || 0
-          };
-        });
-        setEgresos(list);
-        setSelEg(new Set());
-      } catch (err) {
-        console.error(err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
-  }, [filterParams]);*/
+  // carga datos según filtro
     useEffect(() => {
     async function load() {
       try {
@@ -188,7 +158,7 @@ export default function Egreso() {
             id:        data.id || docSnap.id,
             fecha:     `${dd}/${mm}/${yyyy}`,    // ← Aquí va la fecha formateada
             categoria: data.categoria || "",
-            tipo:      data.tipo      || "",
+            item:      data.item      || "",
             proveedor: data.proveedor || "",
             total:     data.total     || 0
           };
@@ -252,20 +222,20 @@ export default function Egreso() {
     setEditingId(row.id);
     setEditData({
       categoria: row.categoria,
-      tipo:      row.tipo,
+      item:      row.item,
       proveedor: row.proveedor,
       total:     row.total.toString()
     });
   };
   const cancelEdit = () => {
     setEditingId(null);
-    setEditData({ categoria: "", tipo: "", proveedor: "", total: "" });
+    setEditData({ categoria: "", item: "", proveedor: "", total: "" });
   };
   const saveEdit   = async id => {
     const ref = doc(db, "egresos", id);
     await updateDoc(ref, {
       categoria: editData.categoria,
-      tipo:      editData.tipo,
+      item:      editData.item,
       proveedor: editData.proveedor,
       total:     Number(editData.total)
     });
@@ -405,7 +375,7 @@ export default function Egreso() {
             </th>
             <th>{t("fecha")}</th>
             <th>{t("categoria")}</th>
-            <th>{t("tipo")}</th>
+            <th>{t("item")}</th>
             <th>{t("proveedor")}</th>
             <th>{t("total")}</th>
             <th>{t("acciones")}</th>
@@ -439,13 +409,13 @@ export default function Egreso() {
                 {editingId === r.id ? (
                   <input
                     className={styles.editInput}
-                    value={editData.tipo}
+                    value={editData.item}
                     onChange={e =>
-                      setEditData(d => ({ ...d, tipo: e.target.value }))
+                      setEditData(d => ({ ...d, item: e.target.value }))
                     }
                   />
                 ) : (
-                  r.tipo
+                  r.item
                 )}
               </td>
               <td>
